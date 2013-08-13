@@ -1,5 +1,14 @@
+[B]2.1.2 Zombie Mod[/B]
+• Added new blue default global background (Option in skin settings to toggle between old and new)
+• Added new view logo Carousel
+• Added jurialmunkey's aeon info tags to all views like Arctic mod
+• Added jurialmunkey's new clock as default clock (can toggle old and new in skin settings)
+• Added jurialmunkey's view banner panel (From arctic 1080 mod)
+• Added new view banner wall
+• Added jurialmunkey's view banner wall (From arctic 1080 mod)
+
 [B]2.1.1[/B]
-• All items on the home screen are no customizable (except live tv, weather & settings)
+• All items on the home screen are now customizable (except live tv, weather & settings)
 • Added new radio and spincontrol images for settings
 • Added new navigation layout for the live tv section
 • Updated layout for some live tv sections

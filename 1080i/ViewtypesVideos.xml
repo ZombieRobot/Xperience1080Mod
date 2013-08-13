@@ -2256,7 +2256,7 @@
             
             <control type="group">
                 <posx>100</posx>
-                <posy>260</posy>
+                <posy>200</posy>
                 <animation effect="fade" start="0" end="100" time="0" reversible="false">Visible</animation>
                 <visible>Window.Next(Home) | Window.Next(programs) | Window.Next(pictures) | Window.Next(filemanager) | Window.Next(settings) | Window.Next(music) | Window.Next(systeminfo) | Window.Next(screencalibration) | Window.Next(picturessettings) | Window.Next(programssettings) | Window.Next(weathersettings) | Window.Next(musicsettings) | Window.Next(systemsettings) | Window.Next(videossettings) | Window.Next(servicesettings) | Window.Next(appearancesettings) | Window.Next(pvrsettings) | Window.Next(videos) | Window.Next(videoplaylist) | Window.Next(LoginScreen) | Window.Next(profiles) | Window.Next(addonbrowser) | Window.Next(filebrowser) | Window.Next(ProfileSettings) | Window.Next(LockSettings) | Window.Next(smartplaylisteditor) | Window.Next(smartplaylistrule) | Window.Next(musicplaylist) | Window.Next(musicfiles) | Window.Next(musiclibrary) | Window.Next(fullscreenvideo) | Window.Next(visualisation) | Window.Next(slideshow) | Window.Next(karaoke) | Window.Next(weather) | Window.Next(pvr) | Window.Next(script-NextAired-TVGuide.xml) | !Control.IsVisible(81)</visible>
                 <control type="group">
@@ -2910,7 +2910,7 @@
                 <control type="fixedlist" id="54">
                     <visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Episodes) | Container.Content(Sets)</visible>
                     <posx>-392</posx>
-                    <posy>260</posy>
+                    <posy>200</posy>
                     <width>2500</width>
                     <height>830</height>
                     <pagecontrol>70</pagecontrol>
@@ -3185,7 +3185,7 @@
                 <control type="image">
                     <description>Scrollbar background (visible on focus)</description>
                     <posx>104</posx>
-                    <posy>135r</posy>
+                    <posy>195r</posy>
                     <width>1712</width>
                     <height>6</height>
                     <texture border="6,0,6,0">views/other/scrollbar-sq.png</texture>
@@ -3196,7 +3196,7 @@
                 <control type="scrollbar" id="70">
                     <description>Scrollbar</description>
                     <posx>104</posx>
-                    <posy>135r</posy>
+                    <posy>195r</posy>
                     <width>1712</width>
                     <height>6</height>
                     <orientation>horizontal</orientation>
@@ -3232,7 +3232,7 @@
             
             <control type="group">
                 <posx>113</posx>
-                <posy>240</posy>
+                <posy>180</posy>
                 <animation effect="fade" start="0" end="100" time="0" reversible="false">Visible</animation>
                 <visible>Window.Next(Home) | Window.Next(programs) | Window.Next(pictures) | Window.Next(filemanager) | Window.Next(settings) | Window.Next(music) | Window.Next(systeminfo) | Window.Next(screencalibration) | Window.Next(picturessettings) | Window.Next(programssettings) | Window.Next(weathersettings) | Window.Next(musicsettings) | Window.Next(systemsettings) | Window.Next(videossettings) | Window.Next(servicesettings) | Window.Next(appearancesettings) | Window.Next(pvrsettings) | Window.Next(videos) | Window.Next(videoplaylist) | Window.Next(LoginScreen) | Window.Next(profiles) | Window.Next(addonbrowser) | Window.Next(filebrowser) | Window.Next(ProfileSettings) | Window.Next(LockSettings) | Window.Next(smartplaylisteditor) | Window.Next(smartplaylistrule) | Window.Next(musicplaylist) | Window.Next(musicfiles) | Window.Next(musiclibrary) | Window.Next(fullscreenvideo) | Window.Next(visualisation) | Window.Next(slideshow) | Window.Next(karaoke) | Window.Next(weather) | Window.Next(pvr) | Window.Next(script-NextAired-TVGuide.xml) | !Control.IsVisible(80)</visible>
                 <control type="group">
@@ -3687,7 +3687,7 @@
                 <control type="fixedlist" id="55">
                     <visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Actors) | Container.Content(Sets)</visible>
                     <posx>-259</posx>
-                    <posy>240</posy>
+                    <posy>180</posy>
                     <width>2300</width>
                     <height>830</height>
                     <pagecontrol>70</pagecontrol>
@@ -3847,7 +3847,7 @@
                         </animation>
                         <visible>!Container(55).OnNext + !Container(55).OnPrevious</visible>
                         <posx>110</posx>
-                        <posy>845</posy>
+                        <posy>785</posy>
                         <control type="group">
                             <visible>Container.Content(movies) | Container.Content(Sets)</visible>
                             <control type="label">
@@ -3929,7 +3929,7 @@
                 <control type="image">
                     <description>Scrollbar background (visible on focus)</description>
                     <posx>104</posx>
-                    <posy>125r</posy>
+                    <posy>185r</posy>
                     <width>1712</width>
                     <height>6</height>
                     <texture border="6,0,6,0">views/other/scrollbar-sq.png</texture>
@@ -3940,7 +3940,7 @@
                 <control type="scrollbar" id="70">
                     <description>Scrollbar</description>
                     <posx>104</posx>
-                    <posy>125r</posy>
+                    <posy>185r</posy>
                     <width>1712</width>
                     <height>6</height>
                     <orientation>horizontal</orientation>
@@ -4347,10 +4347,12 @@
         <control type="group">
             <include>FullscreenDimensions</include>
             <include>OptionsShutdownAnimation</include>
-            <control type="group">
+            
+			<control type="group">
                 <visible>Control.IsVisible(501) + !Window.IsActive(movieinformation) + !Window.IsActive(script-Actors-DialogInfo.xml) + !Window.IsActive(script-Actors-DialogVideoInfo.xml) + IsEmpty(Window(Home).Property(script.metadata.actors.hasparent)) + !Window.IsActive(favourites)</visible>
                 <include>ThumbnailAnimationsPanel</include>
-                <control type="image">
+				<posy>-30</posy>
+				<control type="image">
                     <description>Shadow</description>
                     <posx>-125</posx>
                     <posy>890</posy>
@@ -4584,7 +4586,8 @@
                 <visible>Control.IsVisible(501) + !Window.IsActive(movieinformation) + !Window.IsActive(script-Actors-DialogInfo.xml) + !Window.IsActive(script-Actors-DialogVideoInfo.xml) + IsEmpty(Window(Home).Property(script.metadata.actors.hasparent)) + !Window.IsActive(favourites)</visible>
                 <include>ThumbnailAnimationsPoster</include>
                 <animation effect="slide" end="36" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(ThumbnailVideoSmall)">Conditional</animation>
-                <control type="image">
+                <posy>-30</posy>
+				<control type="image">
                     <description>Poster</description>
                     <posx>1304</posx>
                     <posy>186</posy>
@@ -4708,10 +4711,11 @@
             <include>OptionsShutdownAnimation</include>
             <include>BannerListAnimations</include>
             <visible>Control.IsVisible(60)</visible>        
-            <control type="fixedlist" id="60">
+            
+			<control type="fixedlist" id="60">
                 <visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets)</visible>
                 <posx>0</posx>
-                <posy>134</posy>
+                <posy>114</posy>
                 <width>1920</width>
                 <height>812</height>
                 <pagecontrol>70</pagecontrol>

@@ -42,4 +42,10 @@
         
 <!-- Selected color (FF72F03A) -->
         <color name="SelectedGreen">FF42EE3A</color>
+<!-- New Zombie -->		
+		<color name="Mod_Tags">99ffffff</color>
+		<color name="Mod_Tags_Alt">aa404040</color>
+		<color name="Mod_Tags_Logo_Shadow">dd000000</color>
+		<color name="Mod_Border_Fade">44ffffff</color>
+		<color name="Mod_Border">bbffffff</color>
 </colors>

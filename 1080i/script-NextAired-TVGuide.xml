@@ -19,7 +19,13 @@
         </control>
         <control type="image">
             <include>FullscreenDimensions</include>
+            <texture background="true">special://skin/extras/fade/overlayblue.png</texture>
+			<visible>Skin.HasSetting(blueglobalbackground)</visible>
+        </control>
+		<control type="image">
+            <include>FullscreenDimensions</include>
             <texture background="true">special://skin/extras/fade/overlay.png</texture>
+			<visible>!Skin.HasSetting(blueglobalbackground)</visible>
         </control>
         <control type="group">
             <posx>75</posx>

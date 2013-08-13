@@ -1,0 +1,134 @@
+<includes>
+<!-- =============== -->
+<!-- Banner Panel (68)-->
+<!-- =============== -->
+    <include name="Viewtype_Wall_Banner">
+        <control type="group">
+			<visible>Control.IsVisible(68)</visible>
+			<animation type="Conditional" reversible="false" condition="!Window.IsActive(movieinformation) + !Window.IsActive(musicinformation)">
+					<effect type="fade" start="0" end="100" time="600" />
+					<effect type="zoom" start="90" end="100" time="600" center="640,300" />
+			</animation>
+			<animation type="Conditional" reversible="false" condition="Window.IsActive(movieinformation) | Window.IsActive(musicinformation)">
+					<effect type="zoom" start="100" end="90" time="650" center="640,300"  delay="250"/>
+					<effect type="fade" start="100" end="0" time="550" tween="sine" delay="250"/>
+			</animation>
+			<include>WallFullAnimation</include>
+            <control type="Panel" id="68">
+				<posx>83</posx>
+				<posy>182</posy>
+				<width>1755</width>
+				<height>695</height>
+                <include>FullscreenDimensions</include>
+               <pagecontrol>70</pagecontrol>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<orientation>vertical</orientation>
+				<preloaditems>2</preloaditems>
+                <viewtype label="$LOCALIZE[42263]">Panel</viewtype>
+                <onup>68</onup>
+                <onleft condition="!Skin.HasSetting(KioskMode)">9010</onleft>
+                <onleft condition="Skin.HasSetting(KioskMode)">68</onleft>
+                <ondown>68</ondown>
+                <onright>68</onright>
+                <focusposition>2</focusposition>
+                <visible>Container.Content(tvshows) + !Container.Content(Seasons) + !Container.Content(Episodes) | Container.Content(movies)</visible>
+                <itemlayout width="584" height="139">
+                    <control type="image">
+                        <description>Banner</description>
+                        <posx>6</posx>
+                        <posy>6</posy>
+                        <width>571</width>
+                        <height>124</height>
+                        <texture background="true" diffuse="views/newgloss/banner-diffuse.png">$VAR[PlexBanner]</texture>
+                        <colordiffuse>ff666666</colordiffuse>
+                        <aspectratio>stretch</aspectratio>
+                    </control>
+                    <!-- GLOSS AND BORDER OVERLAY -->
+                    <control type="image">
+                        <description>Gloss</description>
+                        <posx>6</posx>
+                        <posy>6</posy>
+                        <width>571</width>
+                        <height>124</height>
+                        <texture diffuse="views/newgloss/banner-diffuse.png">views/newgloss/info-gloss.png</texture>
+                        <aspectratio align="left" aligny="top" scalediffuse="false">stretch</aspectratio>
+                        <colordiffuse>55ffffff</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <description>Border</description>
+                        <posx>-4</posx>
+                        <posy>-4</posy>
+                        <width>591</width>
+                        <height>144</height>
+                        <texture border="25">views/newgloss/border.png</texture>
+                        <aspectratio>stretch</aspectratio>
+                        <colordiffuse>Mod_Border_Fade</colordiffuse>
+                    </control> 
+                    <control type="image">
+						<posx>507</posx>
+						<posy>5</posy>
+						<width>70</width>
+						<height>70</height>
+						<aspect>keepaspect</aspect>
+						<include>overlay.visibility</include>
+						<visible>!IsEmpty(ListItem.Overlay)</visible>
+					</control> 
+                </itemlayout>
+                <focusedlayout width="584" height="139">
+                    <control type="group">
+                        <control type="image">
+                            <description>Banner</description>
+                            <posx>6</posx>
+                            <posy>6</posy>
+                            <width>571</width>
+                            <height>124</height>
+                            <texture background="true" diffuse="views/newgloss/banner-diffuse.png">$VAR[PlexBanner]</texture>
+                            <aspectratio>stretch</aspectratio>
+                        </control>
+                        <control type="image">
+                            <description>Border</description>
+                            <posx>-4</posx>
+                            <posy>-4</posy>
+                            <width>591</width>
+							<height>144</height>
+                            <texture border="25">views/newgloss/border.png</texture>
+                            <aspectratio>stretch</aspectratio>
+                            <colordiffuse>Mod_Border</colordiffuse>
+                        </control> 
+                    </control>
+					<control type="image">
+						<posx>507</posx>
+						<posy>5</posy>
+						<width>70</width>
+						<height>70</height>
+						<aspect>keepaspect</aspect>
+						<include>overlay.visibility</include>
+						<visible>!IsEmpty(ListItem.Overlay)</visible>
+					</control> 
+                </focusedlayout>
+            </control>
+            <control type="group">
+                <posx>0</posx>
+                <control tyze="image">
+                    <posx>734</posx>
+                    <posy>6</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <aspect>keepaspect</aspect>
+                    <include>overlay.visibility</include>
+                    <visible>!IsEmpty(ListItem.Overlay)</visible>
+                </control> 
+                <control tye="image">
+                    <description>Border</description>
+                    <posx>-4</posx>
+                    <posy>-4</posy>
+                    <width>848</width>
+                    <height>484</height>
+                    <texture border="25">views/newgloss/border.png</texture>
+                    <aspectratio>stretch</aspectratio>
+                    <colordiffuse>Mod_Border</colordiffuse>
+                </control> 
+            </control>
+        </control>
+    </include>    
+</includes>

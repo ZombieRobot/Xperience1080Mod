@@ -191,13 +191,36 @@
                     <visible>Container(30).HasFocus(31)</visible>
                     <onleft>30</onleft>
                     <include>SettingsCategoryGrouplistVars</include>
-                    <control type="radiobutton" id="1001">
+                    <control type="radiobutton" id="1022">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>!Skin.HasSetting(blueglobalbackground)</selected>
+                        <onclick>Skin.ToggleSetting(blueglobalbackground)</onclick>
+                        <label>$LOCALIZE[42256]</label>
+                    </control>
+					<control type="radiobutton" id="1023">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>!Skin.HasSetting(litebackground)</selected>
+                        <onclick>Skin.ToggleSetting(litebackground)</onclick>
+                        <label>$LOCALIZE[42265]</label>
+                    </control>
+					<control type="radiobutton" id="3016">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>Skin.HasSetting(old.clock)</selected>
+                        <onclick>Skin.ToggleSetting(old.clock)</onclick>
+                        <onclick>ReloadSkin</onclick>
+                        <label>$LOCALIZE[42258]</label>
+                    </control>
+					<control type="radiobutton" id="1001">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
                         <selected>Skin.HasSetting(KioskMode)</selected>
                         <onclick>Skin.ToggleSetting(KioskMode)</onclick>
                         <label>$LOCALIZE[41101]</label>
                     </control>
+					
                     <control type="radiobutton" id="1002">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>

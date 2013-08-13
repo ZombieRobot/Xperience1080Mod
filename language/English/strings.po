@@ -1071,3 +1071,43 @@ msgstr ""
 msgctxt "#42255"
 msgid "ClearArt"
 msgstr ""
+
+msgctxt "#42256"
+msgid "Change global background"
+msgstr ""
+
+msgctxt "#42257"
+msgid "No logo present"
+msgstr ""
+
+msgctxt "#42258"
+msgid "Use old clock"
+msgstr ""
+
+msgctxt "#42259"
+msgid "Logo (Carousel)"
+msgstr ""
+
+msgctxt "#42260"
+msgid "Genre"
+msgstr ""
+
+msgctxt "#42261"
+msgid "Banners (Arctic)"
+msgstr ""
+
+msgctxt "#42262"
+msgid "Panel Wall (Arctic)"
+msgstr ""
+
+msgctxt "#42263"
+msgid "Wall Banner"
+msgstr ""
+
+msgctxt "#42264"
+msgid "Half Wall"
+msgstr ""
+
+msgctxt "#42265"
+msgid "Transparent background"
+msgstr ""

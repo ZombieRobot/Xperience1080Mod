@@ -1,0 +1,136 @@
+<includes>
+<!-- ========================= -->
+<!-- Landscape Carousel (514)  -->
+<!-- ========================= -->
+    <include name="Viewtype-Logo">
+        <control type="group">
+            <visible>Control.IsVisible(514) + !Window.IsActive(movieinformation)</visible>
+            <include>CommonViewAnimations</include>
+            <include>OptionsShutdownAnimation</include>
+			<posy>135</posy>
+			<posx>14</posx>
+			<control type="group">
+            	<posy>270</posy>
+				<control type="image">
+					<description>Left Arrow</description>
+					<posx>406</posx>
+					<posy>0</posy>
+					<width>48</width>
+					<height>48</height>
+					<texture background="true">dialogs/shutdown/left.png</texture>
+					<aspectratio>keep</aspectratio>
+					<colordiffuse>Mod_Tags</colordiffuse>
+					<animation effect="fade" start="0" end="100" time="400" delay="600" reversible="false">Visible</animation>
+					<visible>!Container(514).OnNext + !Container(514).OnPrevious + !Container(514).Scrolling + !IsEmpty(Container(514).ListItemNoWrap(-1).Label)</visible>
+				</control>
+				<control type="image">
+					<description>Right Arrow</description>
+					<posx>454r</posx>
+					<posy>0</posy>
+					<width>48</width>
+					<height>48</height>
+					<texture background="true">dialogs/shutdown/right.png</texture>
+					<aspectratio>keep</aspectratio>
+					<colordiffuse>Mod_Tags</colordiffuse>
+					<animation effect="fade" start="0" end="100" time="400" delay="600" reversible="false">Visible</animation>
+					<visible>!Container(514).OnNext + !Container(514).OnPrevious + !Container(514).Scrolling + !IsEmpty(Container(514).ListItemNoWrap(1).Label)</visible>
+				</control>
+			</control>
+            <control type="fixedlist" id="514">
+				<posx>-312</posx>
+				<posy>0</posy>
+				<width>2544</width>
+				<height>714</height>
+                <include>FullscreenDimensions</include>
+                <scrolltime tween="sine" easing="out">500</scrolltime>
+                <orientation>horizontal</orientation>
+                <viewtype label="$LOCALIZE[42259]">list</viewtype>
+                <onup>514</onup>
+                <ondown condition="!Skin.HasSetting(KioskMode)">9010</ondown>
+                <ondown condition="Skin.HasSetting(KioskMode)">514</ondown>
+                <onleft>514</onleft>
+                <onright>514</onright>
+                <preloaditems>2</preloaditems>
+                <focusposition>1</focusposition>
+                <itemlayout width="848" height="714"> 
+					<control type="group">
+						<animation effect="zoom" start="100" end="50" time="0" condition="true" center="auto">Conditional</animation>
+						<control type="image">
+							<description>Logo</description>
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>828</width>
+							<height>464</height>
+							<texture background="true" diffuse="views/newgloss/panel-fanart-diffuse.png">$VAR[value_logoandclearart]</texture>
+							<aspectratio scalediffuse="false">keep</aspectratio>
+						</control>
+					</control>
+                </itemlayout>
+                <focusedlayout width="848" height="714">
+					<control type="group">
+						<animation condition="Container(514).OnNext | Container(514).OnPrevious" effect="zoom" start="50" end="100" time="350" tween="sine" easing="out" center="auto">Focus</animation>
+						<animation condition="Container(514).OnNext | Container(514).OnPrevious" effect="zoom" start="100" end="50" time="250" tween="sine" easing="out" center="auto">UnFocus</animation>
+						<control type="image">
+							<description>Logo</description>
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>828</width>
+							<height>464</height>
+							<texture background="true" diffuse="views/newgloss/panel-fanart-diffuse.png">$VAR[value_logoandclearart]</texture>
+							<aspectratio scalediffuse="false">keep</aspectratio>
+						</control>
+						<control type="image">
+							<posx>-60</posx>
+							<posy>470</posy>
+							<width>100</width>
+							<height>100</height>
+							<aspect>keepaspect</aspect>
+							<include>overlay.visibility2</include>
+							<animation condition="Container(514).OnNext | Container(514).OnPrevious" effect="fade" start="0" end="100" time="350">Focus</animation>
+							<animation condition="Container(514).OnNext | Container(514).OnPrevious" effect="fade" start="100" end="0" time="250">UnFocus</animation>	
+						</control> 
+						<control type="label">
+							<posx>250</posx>
+							<posy>40</posy>
+							<width>528</width>
+							<height>464</height>
+							<align>center</align>
+							<label>$LOCALIZE[42257]</label>
+							<font>Font-Condensed-S72</font>
+							<align>left</align>
+							<textcolor>eewhite</textcolor>
+							<animation effect="zoom" center="106,50" start="80" end="110" time="200" tween="cubic" easing="inout">Focus</animation>
+							<visible>IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(clearart))</visible>
+						</control>
+						<control type="group">
+							<posy>474</posy>
+							<animation condition="Container(514).OnNext | Container(514).OnPrevious" effect="fade" start="0" end="100" time="350">Focus</animation>
+							<animation condition="Container(514).OnNext | Container(514).OnPrevious" effect="fade" start="100" end="0" time="250">UnFocus</animation>							
+							<control type="label">
+								<posx>28</posx>
+								<posy>30</posy>
+								<width>790</width>
+								<label>$INFO[ListItem.Label]</label>
+								<font>Font-Alaska-S32-BL</font>
+								<textcolor>Mod_Tags</textcolor>
+								<scroll>false</scroll>
+								<align>left</align>
+							</control>
+							<control type="textbox">
+								<posx>28</posx>
+								<posy>72</posy>
+								<width>790</width>
+								<height>169</height>
+								<label>$INFO[ListItem.Plot]</label>
+								<font>Font-Alaska-S25-NC</font>
+								<textcolor>eewhite</textcolor>
+								<align>justify</align>
+								<autoscroll delay="13000" time="3000" repeat="13000" />
+							</control>
+						</control>
+					</control>
+                </focusedlayout>
+            </control>
+        </control>
+    </include>    
+</includes>
